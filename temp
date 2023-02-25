@@ -1,0 +1,84 @@
+//  app.post("/pollution", function(req, res){
+      
+//       const geoApiKey="62a2051a67ce3892fc82ff6be015feac"
+//       const apikey = "e50b281ddb0687a70755f947e6782ea7";
+//       var cityName = req.body.city;
+//       const gurl="http://api.positionstack.com/v1/forward?access_key="+geoApiKey+"&query="+cityName;
+      
+//       http.get(gurl, function(response){
+//         if(response.statusCode==200)
+//         {
+//         response.on("data", function(data){
+//           const locationData = JSON.parse(data);
+//           var lat = locationData.data[0].latitude;
+//           var lon = locationData.data[0].longitude;
+         
+     
+//     var today = new Date();
+//       const options = {
+//         weekday: "long",
+//         month: "long",
+//         day: "numeric",
+//       };
+     
+//           var dateOfDay1 = today.toLocaleDateString("en-US", {month:"long", year:"numeric" })
+//           var dateOfDay2 = today.toLocaleString("en-US", options);
+       
+//           const purl = "http://api.openweathermap.org/data/2.5/air_pollution?lat="+lat+"&lon="+lon+"&appid="+apikey;
+
+//           http.get(purl,function(response){
+//             if(response.statusCode==200)
+//             {
+//               response.on("data", function(data){
+//                 const pollutionData = JSON.parse(data);
+//                 const pollutionAqi = pollutionData.list[0].main.aqi;
+//                 const pollutionCo = pollutionData.list[0].components.co;
+//                 const pollutionNo = pollutionData.list[0].components.no;
+//                 const pollutionNo2 = pollutionData.list[0].components.no2;
+//                 const pollutionPm2_5 = pollutionData.list[0].components.pm2_5;
+//                 const pollutionPm10 = pollutionData.list[0].components.pm10;
+                
+
+//                 if(pollutionAqi==1)
+//                 {
+//                   var pollutionCondition="Good";
+//                   var pollutionColor="#01c601"
+//                 }
+//                 else if(pollutionAqi==2)
+//                 {
+//                   var pollutionCondition="Fair";
+//                   var pollutionColor="#01c601"
+//                 }
+//                 else if(pollutionAqi==3)
+//                 {
+//                   var pollutionColor="#111";
+//                   var pollutionCondition="Moderate";
+//                 }
+                
+//                 else if(pollutionAqi==4)
+//                {
+//                  var pollutionCondition="Poor";
+//                  var pollutionColor="#e93f33";
+//                }
+//                 else
+//                 {
+//                   var pollutionCondition="Very Poor";
+//                   var pollutionColor="#000";
+//                 }
+             
+//                 res.render("pollution.ejs", {pm2_5 :pollutionPm2_5, pm10 : "" ,co:pollutionCo,no:pollutionNo, condition: pollutionCondition, Aqi:pollutionAqi ,date1:"", date2:"",location:cityName,color:pollutionColor })
+//               })
+//             }
+//             else
+//             {
+//               res.render("pollution.ejs", {Aqi:"Hello" })
+              
+//             }
+//           })    
+//         })    
+//       }
+//      
+        
+//       // }
+//       })
+//     })  
