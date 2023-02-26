@@ -52,7 +52,7 @@ const options = {
     var dateOfDay2 = today.toLocaleString("en-US", options);
 
 app.get("/", function(req, res){
-  res.render("index.ejs", {cityId:"Na",date1: dateOfDay1, date2: dateOfDay2, weatherHumidity:"N/A",  weatherTemperature:Recentcity[1], location:"Delhi, In", windSpeed: "N/A", visibilityValue:"N/A", pressureValue:"N/A",weatherDescription: "Haze", city1:Recentcity[0], temp1: Recentcity[1], city2:Recentcity[2],temp2:Recentcity[3],city3:Recentcity[4], temp3: Recentcity[5], city4:Recentcity[6],temp4:Recentcity[7],sunrise:"00:00 AM", sunset:"00:00 PM",weatherView : "haze",textVisibility:"hidden",time:"00:00Am"
+  res.render("index.ejs", {cityId:"Na",date1: dateOfDay1, date2: dateOfDay2, weatherHumidity:"N/A",  weatherTemperature:Recentcity[1], location:"Delhi, In", windSpeed: "N/A", visibilityValue:"N/A", pressureValue:"N/A",weatherDescription: "Haze", city1:Recentcity[0], temp1: Recentcity[1], city2:Recentcity[2],temp2:Recentcity[3],city3:Recentcity[4], temp3: Recentcity[5], city4:Recentcity[6],temp4:Recentcity[7],sunrise:"00:00 AM", sunset:"00:00 PM",weatherView : "Haze",textVisibility:"hidden",time:"00:00Am"
 } );
   
   
