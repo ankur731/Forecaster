@@ -1,31 +1,25 @@
 
-// window.addEventListener("load",() => {
-//   if(document.body.classList.contains("dark-mode"))
-//   {
-//       dayNight.querySelector("i").classList.add("fa-sun");
-//   }
-//   else
-//   {
-//       dayNight.querySelector("i").classList.add("fa-moon");
-//   }
-// })
-// localStorage.setItem("theme-mode", "dark")
-// console.log(localStorage.getItem("theme-mode"));
 let body = document.getElementById('body')
 
-window.onload = function applyTheme()
-{
-console.log("loaded");
-  var themeValue = localStorage.getItem("theme");
-  if(themeValue==="dark")
+
+window.addEventListener("load", function(){
   {
-    body.classList.add('dark-mode')
-  }
-  else if(themeValue==="light")
-  {
-    body.classList.remove('dark-mode');
-  } 
-}
+    console.log("loaded");
+      var themeValue = localStorage.getItem("theme");
+      if(themeValue==="dark")
+      {
+        body.classList.add('dark-mode')
+      }
+      else if(themeValue==="light")
+      {
+        body.classList.remove('dark-mode');
+      } 
+    }
+})
+window.addEventListener("load", function(){
+  var ctx = document.getElementById('chart').getContext('2d');
+  window.myGauge = new Chart(ctx, config);
+})
 
 function change_theme()
 {

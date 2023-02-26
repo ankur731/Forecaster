@@ -18,7 +18,7 @@
  
    
 </head>
-<body onload="applyTheme()" id="body">
+<body id="body">
    <div class="container">
     <div class="row">
       <%- include('partials/leftBar') %>
@@ -75,7 +75,7 @@
                 <h5>Weather condition : <span id="view"> <%= weatherView %></span> <span id="loc">  <a href="/" id="locate"><%= location %></a> </span></h5>
               </div>
                 <div class="img-section">
-                  <img id="weatherImg" src="/images/<%= weatherView %>.jpg"  alt="weather img">
+                  <img id="weatherImg" src="/images/<%=weatherView%>.jpg"  alt="weather img">
                 </div>
                              
           </div>
