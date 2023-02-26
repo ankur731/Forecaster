@@ -3,6 +3,7 @@ const http=require("http");
 const https = require("https");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const PORT = process.env.PORT || 3030;
 
 const app = express();
 app.set("view-engine", "ejs");
@@ -83,6 +84,7 @@ app.get("/", function(req, res){
           const icon = weatherData.weather[0].icon;
           const id = weatherData.id;
           const view = weatherData.weather[0].main;
+    
           const dt = weatherData.dt;
           const imageURL = "http://openweathermap.org/img/wn/"+ icon +"@2x.png";
           cityName = weatherData.name;
@@ -268,6 +270,6 @@ res.redirect("/");
       // }
       })
     })  
-app.listen(3000, function(req, res){
+app.listen(PORT, function(req, res){
     console.log("Server is running on port 5000");
 })
