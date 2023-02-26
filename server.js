@@ -3,7 +3,7 @@ const http=require("http");
 const https = require("https");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 app.set("view-engine", "ejs");
@@ -95,7 +95,7 @@ app.get("/", function(req, res){
           var sunsetTime = new Date(ssTime * 1000);
           sunriseTime =  sunriseTime.toLocaleTimeString();
           sunsetTime = sunsetTime.toLocaleTimeString();
-          const weatherTime = new Date().toLocaleTimeString();
+          const weatherTime = new Date(dt*1000).toLocaleTimeString();
           
           cityName =loc;
           if(Recentcity[0]!=cityName)
