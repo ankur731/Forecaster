@@ -9,8 +9,8 @@
 //       dayNight.querySelector("i").classList.add("fa-moon");
 //   }
 // })
-
-
+localStorage.setItem("theme-mode", "dark")
+console.log(localStorage.getItem("theme-mode"));
 let body = document.getElementById('body')
 function applyTheme()
  {

@@ -93,9 +93,16 @@ app.get("/", function(req, res){
           const ssTime = weatherData.sys.sunset;
           var sunriseTime = new Date(srTime * 1000);
           var sunsetTime = new Date(ssTime * 1000);
+          sunriseTime.setHours(sunriseTime.getHours + 5);
+          sunriseTime.setMinutes(sunriseTime.getMinutes + 30);
+          sunsetTime.setHours(sunsetTime.getHours + 5);
+          sunsetTime.setMinutes(sunsetTime.getMinutes + 30);
           sunriseTime =  sunriseTime.toLocaleTimeString();
           sunsetTime = sunsetTime.toLocaleTimeString();
-          const weatherTime = new Date(dt*1000).toLocaleTimeString();
+          var weatherTime = new Date(dt*1000)
+          weatherTime.setHours(weatherTime.getHours()+5);
+          weatherTime.setMinutes(weatherTime.getMinutes()+30);
+          weatherTime = weatherTime.toLocaleTimeString();
           
           cityName =loc;
           if(Recentcity[0]!=cityName)
@@ -106,7 +113,6 @@ app.get("/", function(req, res){
             Recentcity.pop();
             Recentcity.pop();
          }
-          
           
           res.render("index.ejs", { location:loc, date1: dateOfDay1, date2:dateOfDay2,  weatherTemperature:temperature, windSpeed: speedOfWind,weatherDescription:desc, visibilityValue:visi, pressureValue:pressValue,weatherHumidity:humid, city1: Recentcity[0],city2: Recentcity[2],city3: Recentcity[4],city4: Recentcity[6],
             temp1: Recentcity[1],temp2: Recentcity[3],temp3: Recentcity[5],temp4:Recentcity[7], 
