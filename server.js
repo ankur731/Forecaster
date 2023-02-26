@@ -71,8 +71,6 @@ app.get("/", function(req, res){
           response.on("data", function(data){
           const weatherData = JSON.parse(data);
           const temperature = weatherData.main.temp;
-        
-         
           const visi = weatherData.visibility;
           const desc = weatherData.weather[0].description;
           const speedOfWind = weatherData.wind.speed;
@@ -93,10 +91,10 @@ app.get("/", function(req, res){
           const ssTime = weatherData.sys.sunset;
           var sunriseTime = new Date(srTime * 1000);
           var sunsetTime = new Date(ssTime * 1000);
-          sunriseTime.setHours(sunriseTime.getHours + 5);
-          sunriseTime.setMinutes(sunriseTime.getMinutes + 30);
-          sunsetTime.setHours(sunsetTime.getHours + 5);
-          sunsetTime.setMinutes(sunsetTime.getMinutes + 30);
+          sunriseTime.setHours(sunriseTime.getHours() + 5);
+          sunriseTime.setMinutes(sunriseTime.getMinutes() + 30);
+          sunsetTime.setHours(sunsetTime.getHours() + 5);
+          sunsetTime.setMinutes(sunsetTime.getMinutes() + 30);
           sunriseTime =  sunriseTime.toLocaleTimeString();
           sunsetTime = sunsetTime.toLocaleTimeString();
           var weatherTime = new Date(dt*1000)
@@ -158,12 +156,6 @@ transporter.sendMail(message, function(err, info) {
 })
 res.redirect("/");
     })
-   
-     
-
-
-      
-    
     app.get("/facts", function(req, res){
       res.render("facts.ejs", {facts:facts})
     })
@@ -217,9 +209,7 @@ res.redirect("/");
                 const pollutionPm10 = pollutionData.list[0].components.pm10;
                 const dt = pollutionData.list[0].dt;
                 const pollutionTime = new Date().toLocaleTimeString();
-                
-               
-
+   
                 if(pollutionAqi==1)
                 {
                   var pollutionCondition="Good";
@@ -271,8 +261,7 @@ res.redirect("/");
         res.redirect("/");
         // res.render("pollution.ejs", {pm2_5 :"", pm10 : "" ,o3:"",no2:"", condition: "",condition1: "",condition2: "",condition3: "",condition4: "", Aqi:"" ,date1:dateOfDay1, date2:dateOfDay2,location:"Invalid",time:"",aqi1:"",city1:"",aqi2:"",city2:"",aqi3:"",city3:"",aqi4:"",city4:"" })
       }
-     
-        
+      
       // }
       })
     })  
