@@ -55,16 +55,16 @@ function navbar_theme()
   if(body.classList.contains('dark-mode'))
   {
     // body.classList.remove('dark-mode')
-    
     document.getElementById("theme-mode2").classList.add("fa-moon");
    document.getElementById("theme-mode2").classList.remove("fa-sun");
-    localStorage.setItem("theme", "light");
+    // localStorage.setItem("theme", "light");
   }
   else
   {
   //  body.classList.add('dark-mode');
   document.getElementById("theme-mode2").classList.add("fa-sun");
   document.getElementById("theme-mode2").classList.remove("fa-moon");
-   localStorage.setItem("theme", "dark");
+ 
+  //  localStorage.setItem("theme", "dark");
   }   
 }
