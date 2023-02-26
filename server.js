@@ -95,7 +95,7 @@ app.get("/", function(req, res){
           var sunsetTime = new Date(ssTime * 1000);
           sunriseTime =  sunriseTime.toLocaleTimeString();
           sunsetTime = sunsetTime.toLocaleTimeString();
-          const weatherTime = new Date(dt*1000).toLocaleTimeString();
+          const weatherTime = new Date().toLocaleTimeString();
           
           cityName =loc;
           if(Recentcity[0]!=cityName)
@@ -210,7 +210,7 @@ res.redirect("/");
                 const pollutionAqi = pollutionData.list[0].main.aqi
                 const pollutionPm10 = pollutionData.list[0].components.pm10;
                 const dt = pollutionData.list[0].dt;
-                const pollutionTime = new Date(dt*1000).toLocaleTimeString();
+                const pollutionTime = new Date().toLocaleTimeString();
                 
                
 
